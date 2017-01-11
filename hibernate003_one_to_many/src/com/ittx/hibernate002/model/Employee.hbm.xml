@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.ittx.hibernate002.model.Employee" table="employee">
+		<id name="id" column="e_id" type="int">
+			<generator class="native"/>
+		</id>
+		<property name="name" column="name" type="java.lang.String"/>
+		<property name="salary" column="salary" type="int"/>
+	</class>   
+</hibernate-mapping>

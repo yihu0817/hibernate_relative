@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.ittx.hibernate002.model.Student" table="student">
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="number" type="int">
+			<column name="number" />
+		</property>
+		<property name="name" type="java.lang.String">
+			<column name="name" />
+		</property>
+		<!-- coureLists属性，表达的是本对象（Student）与Course的多对多的关系
+		     table中间表名 -->    
+		<set name="coureLists" table="t_student_course">
+			<!--当前表（Student）的主键 在中间表对应字段-->
+			<key column="sid"></key>
+			<!-- many-to-many关联另一张表  column：course表主键在中间表对应字段名 -->
+			<many-to-many class="com.ittx.hibernate002.model.Course"
+				column="cid"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>
