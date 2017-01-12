@@ -3,14 +3,14 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-1-11 14:00:17 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.ittx.hibernate002.model.Card" table="CARD">
+    <class name="com.ittx.hibernate002.model.Card" table="t_card">
         <id name="id" type="int">
-            <column name="ID" />
+            <column name="cid" />
             <generator class="native" />
         </id>
-        <property name="number" type="long" unique="true">
-            <column name="NUMBER" />
+        <property name="number" type="long">
+            <column name="number" />
         </property>
-        <one-to-one name="person" class="com.ittx.hibernate002.model.Person" property-ref="card"/>
+        <one-to-one name="person" class="com.ittx.hibernate002.model.Person" property-ref="card" />
     </class>
 </hibernate-mapping>

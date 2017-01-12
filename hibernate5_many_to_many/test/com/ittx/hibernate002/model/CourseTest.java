@@ -38,7 +38,6 @@ public class CourseTest {
 		session.save(c1);
 		session.save(c2);
 		session.save(s1);
-		
 	}
 
 }
